@@ -7,4 +7,5 @@
     print "--group, -g : list all the command groups\n"
     print  "[keywords]: fuzzy search the [keywords] for command and description:\n"
     print "--search, -s [keywords]: precise search for the [keywords] with show all the information\n"
+    print  "--hot, -o: list all the hot command \n"
     print "------------------------------ help list -----------------------------------------------------------\n"
