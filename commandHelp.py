@@ -40,7 +40,7 @@ class commandHelp:
     def listAllCommands(self):
         if len(self.commandArray) >0 :
             for line in self.commandArray:
-                print line.getName(), " : ", line.getDescription(), "\n"
+                print line.getName(), " : ", line.getDescription(), "\t"
 
     def listAllGroups(self):
         groups = []
@@ -50,19 +50,19 @@ class commandHelp:
                     continue
                 else:
                     groups.append(line.getGroup())
-                    print line.getGroup(), "\n"
+                    print line.getGroup(), "\t"
 
 #precise search for the keyword in the commandArray
     def listPreciseSearch(self, k):
         if len(self.commandArray) >0 :
             for line in self.commandArray:
                 if k == line.getName():
-                    print "Name : ", line.getName(), "\n"
-                    print "Description : ", line.getDescription(), "\n"
-                    print  "Group : ", line.getGroup(), "\n"
-                    print "Keywords : ", line.getKeyword(), "\n"
-                    print  "Hot : ", line.getIsHot(), "\n"
-                    print "Usage : ", line.getUsage(), "\n"
+                    print "Name : ", line.getName(), "\t"
+                    print "Description : ", line.getDescription(), "\t"
+                    print  "Group : ", line.getGroup(), "\t"
+                    print "Keywords : ", line.getKeyword(), "\t"
+                    print  "Hot : ", line.getIsHot(), "\t"
+                    print "Usage : ", line.getUsage(), "\t"
                     break
 
 # fuzzy search the keyword in the commandArray
@@ -70,6 +70,12 @@ class commandHelp:
         if len(self.commandArray) >0 :
             for line in self.commandArray:
                 if line.getName().find(k) >= 0:
-                    print line.getName(), " : ", line.getDescription(), "\n"
+                    print line.getName(), " : ", line.getDescription(), "\t"
                 elif line.getDescription().find(k) >=  0:
-                    print line.getName(), " : ", line.getDescription(), "\n"
+                    print line.getName(), " : ", line.getDescription(), "\t"
+
+    def listHotCommand(self):
+        if len(self.commandArray) >0 :
+            for line in self.commandArray:
+                if line.getIsHot():
+                    print line.getName()
