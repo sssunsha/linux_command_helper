@@ -63,13 +63,13 @@ def parseCommand(commad):
         option = commad[1][2:]
         if option == 'version':
             handleVerstionList()
-        if option == 'help':
+        elif option == 'help':
             handleHelpList()
-        if option == 'all':
+        elif option == 'all':
             handleAllCommandsList()
-        if option == "group":
+        elif option == "group":
             handleAllCommandGroups()
-        if option == "search":
+        elif option == "search":
             handlePreciseSearch(commad[2])
         else:
             handleErrorCommand()
@@ -77,13 +77,13 @@ def parseCommand(commad):
         option = commad[1][1:]
         if option == 'v':
             handleVerstionList()
-        if option == 'h':
+        elif option == 'h':
             handleHelpList()
-        if option ==  'a':
+        elif option ==  'a':
             handleAllCommandsList()
-        if option == "g":
+        elif option == "g":
             handleAllCommandGroups()
-        if option == "s":
+        elif option == "s":
             handlePreciseSearch(commad[2])
         else:
             handleErrorCommand()
