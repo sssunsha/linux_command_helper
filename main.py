@@ -18,8 +18,8 @@ def handleHelpList():
     print "--version, -v : print the version information\n"
     print "--all, -a : list all the commands\n"
     print "--group, -g : list all the command groups\n"
-    print  "[keywords]: fuzzy search the [keywords] for command and description:"
-    print "--search, -s [keywords]: precise search for the [keywords] with show all the information"
+    print  "[keywords]: fuzzy search the [keywords] for command and description:\n"
+    print "--search, -s [keywords]: precise search for the [keywords] with show all the information\n"
     print "------------------------------ help list -----------------------------------------------------------\n"
 
 # input command error function
