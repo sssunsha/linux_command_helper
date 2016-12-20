@@ -1,4 +1,5 @@
 ﻿name,description,group,keywords,hot,usage
+man,帮助指令，通过man指令可以查看Linux中的指令帮助、配置文件帮助和编程帮助等信息,man,man,yes,
 ipcrm,删除消息队列、信号集、或者共享内存标识,进程和作业管理,,,
 systemctl,系统服务管理器指令， 它实际上将 service 和 chkconfig 这两个命令组合到一起。,进程和作业管理,,,
 w,显示目前登入系统的用户信息,进程和作业管理,,,
