@@ -1,6 +1,6 @@
 # coding=utf-8
 import sys
-import os
+from constant import  *
 from commandHelp import *
 
 # define the version number
@@ -13,7 +13,7 @@ def handleVerstionList():
 
 # help function
 def handleHelpList():
-    print('\033[1;32;40m')
+    print(COLOR_GREEN)
     print "------------------------------ help list -----------------------------------------------------------\n"
     print "--help, -h : print help list\n"
     print "--version, -v : print the version information\n"
@@ -26,7 +26,7 @@ def handleHelpList():
 
 # input command error function
 def handleErrorCommand():
-    print('\033[1;32;40m')
+    print(COLOR_GREEN)
     print  "---------------------------------------------------------------------------\n"
     print "the input command is invalid. \n"
     print  "---------------------------------------------------------------------------\n"
@@ -34,7 +34,7 @@ def handleErrorCommand():
 
 # print all the linux commands
 def handleAllCommandsList():
-    print('\033[1;32;40m')
+    print(COLOR_GREEN)
     print  "---------------------------------------------------------------------------\n"
     print "all the linux commands: \n"
     print  "---------------------------------------------------------------------------\n"
@@ -42,7 +42,7 @@ def handleAllCommandsList():
 
 #print all the linux command groups
 def handleAllCommandGroups():
-    print('\033[1;32;40m')
+    print(COLOR_GREEN)
     print  "---------------------------------------------------------------------------\n"
     print "all the linux command groups"
     print  "---------------------------------------------------------------------------\n"
@@ -50,7 +50,7 @@ def handleAllCommandGroups():
 
 # fuzzy search for the linux command
 def handleFuzzySearch(c):
-    print('\033[1;32;40m')
+    print(COLOR_GREEN)
     print  "---------------------------------------------------------------------------\n"
     print "search result for  ", c , ":\n"
     print  "---------------------------------------------------------------------------\n"
@@ -58,7 +58,7 @@ def handleFuzzySearch(c):
 
 # precise search for the linux command
 def handlePreciseSearch(c):
-    print('\033[1;32;40m')
+    print(COLOR_GREEN)
     print  "---------------------------------------------------------------------------\n"
     print "search result for  ", c , ":\n"
     print  "---------------------------------------------------------------------------\n"
@@ -66,7 +66,7 @@ def handlePreciseSearch(c):
 
 # list all the linux hot command
 def handleHotCommand():
-    print('\033[1;32;40m')
+    print(COLOR_GREEN)
     print  "---------------------------------------------------------------------------\n"
     print " hot linux commands: \n"
     print  "---------------------------------------------------------------------------\n"
