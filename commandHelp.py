@@ -86,6 +86,26 @@ class commandHelp:
                     groups.append(line.getGroup())
                     print line.getGroup(), "\t"
 
+# list the sample command for the search k
+# and handle for quick using
+    def listSampleSearch(self, k):
+        # print the sample command usage for the command k
+        if len(self.sampleCommandArray) > 0:
+            index = 0
+            sampleList = []
+            for line in self.sampleCommandArray:
+                if k == line.getKeyword():
+                    index += 1
+                    sampleList.append(line.getSample())
+                    print COLOR_YELLOW, index, " : ", COLOR_RED, line.getSample(), COLOR_YELLOW, line.getDescription(), "\t"
+            print COLOR_WHITE
+        inputStr = raw_input("please input the index to run the sample command:") #TODO: there is bugs
+        inputInt = int(inputStr)
+        if inputInt <= index and inputInt >= 1:
+            print COLOR_WHITE, "run command:", sampleList[inputInt - 1]
+
+
+
 #precise search for the keyword in the commandArray
     def listPreciseSearch(self, k):
         print(COLOR_WHITE)
@@ -100,11 +120,8 @@ class commandHelp:
                     print  COLOR_WHITE, "Hot : ", COLOR_YELLOW, line.getIsHot(), "\t"
                     print COLOR_WHITE, "Usage : ", COLOR_YELLOW, line.getUsage(), "\t\n"
                     break
-        # print the sample command usage for the command k
-        if len(self.sampleCommandArray) > 0:
-            for line in self.sampleCommandArray:
-                if k == line.getKeyword():
-                    print COLOR_RED, line.getSample(), COLOR_YELLOW, line.getDescription(), "\t"
+        # handle for the sample command search
+        self.listSampleSearch(k)
 
 # fuzzy search the keyword in the commandArray
     def listFuzzySearch(self, k):
