@@ -1,7 +1,8 @@
 # coding=utf-8
 import csv
-import json
 from command import *
+from sampleCommand import *
+
 
 class commandHelp:
 
@@ -12,7 +13,7 @@ class commandHelp:
     # linux command array
     commandArray = []
     # linux sample command json object
-    sampleJson = ""
+    sampleCommandArray = []
 
     # init method
     def __init__(self, commandFilePath, sampleFilePath):
@@ -21,6 +22,9 @@ class commandHelp:
 
     def setCommandArray(self, array):
         self.commandArray = array
+
+    def setSampleCommandArray(self, array):
+        self.sampleCommandArray = array
 
     # import csv command resource file
     def importData(self):
@@ -45,13 +49,22 @@ class commandHelp:
 
     def importSampleData(self):
         if self.sampleFilePath != "":
-            f = open(self.sampleFilePath, "r")
-            str = f.read();
-            self.sampleJson = json.loads(str)
-            f.close()
-            return 0
+            csvReader = csv.reader(file(self.sampleFilePath, 'r'))
+            index = 0
+            ca = []
+            for line in csvReader:
+                if index > 0:
+                    c = sampleCommand(line[0], line[1], line[2])
+                    ca.append(c)
+                index += 1
+            self.setSampleCommandArray(ca)
+            if len(self.sampleCommandArray) == 0:
+                print "parsing sample command resource file failed\n"
+                return -1
+            else:
+                return 0
         else:
-            print "parsing sample command resource file failed\n"
+            print "invalid linux sample command resource file path : ", self.sampleFilePath, "\n"
             return -1
 
 
