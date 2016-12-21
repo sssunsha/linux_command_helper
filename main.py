@@ -112,8 +112,10 @@ def main(argv):
 
 if __name__=='__main__':
     print "\nwelcome to linux command helper, more at:( http://man.linuxde.net/)"
-    ch = commandHelp("./linux_command.csv")
-    if (ch.importData() == -1):
+    ch = commandHelp("./linux_command.csv", "./linux_command_detail.json")
+    if ch.importData() == -1:
+        sys.exit(-1)
+    if ch.importSampleData() == -1:
         sys.exit(-1)
     else:
         _ch = ch
