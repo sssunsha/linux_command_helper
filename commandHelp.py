@@ -69,11 +69,13 @@ class commandHelp:
 
 
     def listAllCommands(self):
+        print('\033[1;37;40m')
         if len(self.commandArray) >0 :
             for line in self.commandArray:
                 print line.getName(), " : ", line.getDescription(), "\t"
 
     def listAllGroups(self):
+        print('\033[1;37;40m')
         groups = []
         if len(self.commandArray) > 0:
             for line in self.commandArray:
@@ -85,28 +87,35 @@ class commandHelp:
 
 #precise search for the keyword in the commandArray
     def listPreciseSearch(self, k):
+        print('\033[1;37;40m')
         # print the basic information for the command k
         if len(self.commandArray) >0 :
             for line in self.commandArray:
                 if k == line.getName():
-                    print "Name : ", line.getName(), "\t"
-                    print "Description : ", line.getDescription(), "\t"
-                    print  "Group : ", line.getGroup(), "\t"
-                    print "Keywords : ", line.getKeyword(), "\t"
-                    print  "Hot : ", line.getIsHot(), "\t"
-                    print "Usage : ", line.getUsage(), "\t"
+                    print '\033[1;37;40m', "Name : ", '\033[1;33;40m', line.getName(), "\t"
+                    print '\033[1;37;40m', "Description : ", '\033[1;33;40m', line.getDescription(), "\t"
+                    print  '\033[1;37;40m', "Group : ", '\033[1;33;40m', line.getGroup(), "\t"
+                    print '\033[1;37;40m', "Keywords : ", '\033[1;33;40m', line.getKeyword(), "\t"
+                    print  '\033[1;37;40m', "Hot : ", '\033[1;33;40m', line.getIsHot(), "\t"
+                    print '\033[1;37;40m', "Usage : ", '\033[1;33;40m', line.getUsage(), "\t\n"
                     break
+        # print the sample command usage for the command k
+        if len(self.sampleCommandArray) > 0:
+            for line in self.sampleCommandArray:
+                if k == line.getKeyword():
+                    print '\033[1;31;40m', line.getSample(), '\033[1;33;40m', line.getDescription(), "\t"
 
 # fuzzy search the keyword in the commandArray
     def listFuzzySearch(self, k):
         if len(self.commandArray) >0 :
             for line in self.commandArray:
                 if line.getName().find(k) >= 0:
-                    print line.getName(), " : ", line.getDescription(), "\t"
+                    print '\033[1;37;40m', line.getName(), " : ", '\033[1;33;40m', line.getDescription(), "\t"
                 elif line.getDescription().find(k) >=  0:
-                    print line.getName(), " : ", line.getDescription(), "\t"
+                    print '\033[1;37;40m', line.getName(), " : ", '\033[1;33;40m', line.getDescription(), "\t"
 
     def listHotCommand(self):
+        print('\033[1;37;40m')
         if len(self.commandArray) >0 :
             for line in self.commandArray:
                 if line.getIsHot():
