@@ -164,3 +164,9 @@ class commandHelp:
             for line in self.commandArray:
                 if line.getIsHot():
                     print line.getName()
+
+    def listSampleCommand(self):
+        print(COLOR_WHITE)
+        if len(self.sampleCommandArray)>0:
+            for line in self.sampleCommandArray:
+                print COLOR_YELLOW, line.getKeyword(), " : ", COLOR_RED, line.getSample(), COLOR_YELLOW, " : ", line.getDescription()

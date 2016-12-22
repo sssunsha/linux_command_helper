@@ -19,6 +19,7 @@ def handleHelpList():
     print "--help, -h : print help list\n"
     print "--version, -v : print the version information\n"
     print "--all, -a : list all the commands\n"
+    print "--list, -l : list all the sample commands\n"
     print "--group, -g : list all the command groups\n"
     print  "[keywords]: fuzzy search the [keywords] for command and description:\n"
     print "--search, -s [keywords]: precise search for the [keywords] with show all the information\n"
@@ -73,6 +74,14 @@ def handleHotCommand():
     print  "---------------------------------------------------------------------------\n"
     _ch.listHotCommand()
 
+#list all the sample linux command
+def handleListSampleCommand():
+    print(COLOR_GREEN)
+    print  "---------------------------------------------------------------------------\n"
+    print " all sample linux commands: \n"
+    print  "---------------------------------------------------------------------------\n"
+    _ch.listSampleCommand()
+
 # parsing command function
 def parseCommand(commad):
     if commad[1].startswith('--'):
@@ -89,6 +98,8 @@ def parseCommand(commad):
             handleHotCommand()
         elif option == "search":
             handlePreciseSearch(commad[2])
+        elif option == "list":
+            handleListSampleCommand()
         else:
             handleErrorCommand()
     elif commad[1].startswith('-'):
@@ -105,6 +116,8 @@ def parseCommand(commad):
             handleHotCommand()
         elif option == "s":
             handlePreciseSearch(commad[2])
+        elif option == "l":
+            handleListSampleCommand()
         else:
             handleErrorCommand()
     else:
