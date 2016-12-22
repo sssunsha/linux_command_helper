@@ -100,12 +100,12 @@ class commandHelp:
                     print COLOR_YELLOW, index, ":", COLOR_RED, line.getSample(), COLOR_YELLOW, line.getDescription(), "\t"
             print COLOR_WHITE
         while(1):
-            inputStr = raw_input("please input the index to run the sample command:")
+            inputStr = raw_input("please input the index to run the sample command:(q to quit)")
             if inputStr == 'q':
                 break
             inputInt = int(inputStr)
             if inputInt <= index and inputInt >= 1:
-                print COLOR_WHITE, "run command:", sampleList[inputInt - 1]
+                print COLOR_YELLOW, "run command:", COLOR_RED, sampleList[inputInt - 1]
             else:
                 break
 
