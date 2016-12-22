@@ -113,20 +113,20 @@ class commandHelp:
                     index += 1
                     groups.append(line.getGroup())
                     print COLOR_WHITE, index, " : ", COLOR_YELLOW, line.getGroup(), "\t"
-                    while(index):
-                        print COLOR_WHITE
-                        inputStr = raw_input("please input the index to choose the group:(q to quit)")
-                        if inputStr == 'q':
-                            break
-                        if inputStr.isdigit():
-                            inputInt = int(inputStr)
-                            if inputInt <= index and inputInt >= 1:
-                                self.listGroips(groups[inputInt-1])
-                                break
-                            else:
-                                break
-                        else:
-                            break
+            while(index):
+                print COLOR_WHITE
+                inputStr = raw_input("please input the index to choose the group:(q to quit)")
+                if inputStr == 'q':
+                    break
+                if inputStr.isdigit():
+                    inputInt = int(inputStr)
+                    if inputInt <= index and inputInt >= 1:
+                        self.listGroips(groups[inputInt-1])
+                        break
+                    else:
+                        break
+                else:
+                    break
 
 # list the sample command for the search k
 # and handle for quick using
