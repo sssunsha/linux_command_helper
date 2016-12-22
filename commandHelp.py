@@ -130,13 +130,30 @@ class commandHelp:
 
 # fuzzy search the keyword in the commandArray
     def listFuzzySearch(self, k):
+        index = 0
+        commandList = []
         if len(self.commandArray) >0 :
             for line in self.commandArray:
                 if line.getName().find(k) >= 0:
-                    print COLOR_WHITE, line.getName(), " : ", COLOR_YELLOW, line.getDescription(), "\t"
+                    index += 1
+                    commandList.append(line.getName())
+                    print COLOR_YELLOW, index, ":", COLOR_WHITE, line.getName(), " : ", COLOR_YELLOW, line.getDescription(), "\t"
                 elif line.getDescription().find(k) >=  0:
-                    print COLOR_WHITE, line.getName(), " : ", COLOR_YELLOW, line.getDescription(), "\t"
-
+                    index += 1
+                    commandList.append(line.getName())
+                    print COLOR_YELLOW, index, ":", COLOR_WHITE, line.getName(), " : ", COLOR_YELLOW, line.getDescription(), "\t"
+            if index:
+                while (1):
+                    print COLOR_WHITE
+                    inputStr = raw_input("please input the index to show the command detail information:(q to quit)")
+                    if inputStr == 'q':
+                        break
+                    inputInt = int(inputStr)
+                    if inputInt <= index and inputInt >= 1:
+                        self.listPreciseSearch(commandList[inputInt-1])
+                        break
+                    else:
+                        break
     def listHotCommand(self):
         print(COLOR_WHITE)
         if len(self.commandArray) >0 :
