@@ -76,16 +76,57 @@ class commandHelp:
             for line in self.commandArray:
                 print line.getName(), " : ", line.getDescription(), "\t"
 
+    def listGroips(self, group):
+        print COLOR_WHITE
+        command = []
+        index = 0
+        if len(self.commandArray)>0 :
+            for line in self.commandArray:
+                if line.getGroup() == group:
+                    index += 1
+                    command.append(line.getName())
+                    print COLOR_YELLOW, index, " : ", COLOR_RED, line.getName(), COLOR_WHITE, " : ", line.getDescription()
+            while(index):
+                print COLOR_WHITE
+                inputStr = raw_input("please input the index to choose the group:(q to quit)")
+                if inputStr == 'q':
+                    break
+                if inputStr.isdigit():
+                    inputInt = int(inputStr)
+                    if inputInt <= index and inputInt >= 1:
+                        self.listPreciseSearch(command[inputInt-1])
+                        break
+                    else:
+                        break
+                else:
+                    break
+
     def listAllGroups(self):
         print(COLOR_WHITE)
         groups = []
+        index = 0
         if len(self.commandArray) > 0:
             for line in self.commandArray:
                 if groups.__contains__(line.getGroup()):
                     continue
                 else:
+                    index += 1
                     groups.append(line.getGroup())
-                    print line.getGroup(), "\t"
+                    print COLOR_WHITE, index, " : ", COLOR_YELLOW, line.getGroup(), "\t"
+                    while(index):
+                        print COLOR_WHITE
+                        inputStr = raw_input("please input the index to choose the group:(q to quit)")
+                        if inputStr == 'q':
+                            break
+                        if inputStr.isdigit():
+                            inputInt = int(inputStr)
+                            if inputInt <= index and inputInt >= 1:
+                                self.listGroips(groups[inputInt-1])
+                                break
+                            else:
+                                break
+                        else:
+                            break
 
 # list the sample command for the search k
 # and handle for quick using
