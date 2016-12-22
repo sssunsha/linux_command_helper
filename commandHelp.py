@@ -97,12 +97,17 @@ class commandHelp:
                 if k == line.getKeyword():
                     index += 1
                     sampleList.append(line.getSample())
-                    print COLOR_YELLOW, index, " : ", COLOR_RED, line.getSample(), COLOR_YELLOW, line.getDescription(), "\t"
+                    print COLOR_YELLOW, index, ":", COLOR_RED, line.getSample(), COLOR_YELLOW, line.getDescription(), "\t"
             print COLOR_WHITE
-        inputStr = raw_input("please input the index to run the sample command:") #TODO: there is bugs
-        inputInt = int(inputStr)
-        if inputInt <= index and inputInt >= 1:
-            print COLOR_WHITE, "run command:", sampleList[inputInt - 1]
+        while(1):
+            inputStr = raw_input("please input the index to run the sample command:")
+            if inputStr == 'q':
+                break
+            inputInt = int(inputStr)
+            if inputInt <= index and inputInt >= 1:
+                print COLOR_WHITE, "run command:", sampleList[inputInt - 1]
+            else:
+                break
 
 
 
