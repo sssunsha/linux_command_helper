@@ -169,4 +169,4 @@ class commandHelp:
         print(COLOR_WHITE)
         if len(self.sampleCommandArray)>0:
             for line in self.sampleCommandArray:
-                print COLOR_YELLOW, line.getKeyword(), " : ", COLOR_RED, line.getSample(), COLOR_YELLOW, " : ", line.getDescription()
+                print COLOR_WHITE, line.getKeyword(), " : ", COLOR_RED, line.getSample(), COLOR_YELLOW, " : ", line.getDescription()
