@@ -107,9 +107,9 @@ class commandHelp:
             inputInt = int(inputStr)
             if inputInt <= index and inputInt >= 1:
                 print COLOR_YELLOW, "run command:", COLOR_RED, sampleList[inputInt - 1], COLOR_WHITE
-                print "============================================================================="
+                print "\n============================================================================="
                 os.system(sampleList[inputInt - 1])
-                break
+                print "\n============================================================================="
             else:
                 break
 
