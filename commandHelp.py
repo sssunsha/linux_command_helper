@@ -1,5 +1,6 @@
 # coding=utf-8
 import csv
+import os
 from command import *
 from sampleCommand import *
 from constant import *
@@ -105,7 +106,10 @@ class commandHelp:
                 break
             inputInt = int(inputStr)
             if inputInt <= index and inputInt >= 1:
-                print COLOR_YELLOW, "run command:", COLOR_RED, sampleList[inputInt - 1]
+                print COLOR_YELLOW, "run command:", COLOR_RED, sampleList[inputInt - 1], COLOR_WHITE
+                print "============================================================================="
+                os.system(sampleList[inputInt - 1])
+                break
             else:
                 break
 
