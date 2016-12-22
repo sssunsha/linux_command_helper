@@ -127,3 +127,4 @@ if __name__=='__main__':
     else:
         _ch = ch
     main(sys.argv)
+    print COLOR_WHITE
