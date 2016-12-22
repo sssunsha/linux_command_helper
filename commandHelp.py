@@ -104,12 +104,15 @@ class commandHelp:
             inputStr = raw_input("please input the index to run the sample command:(q to quit)")
             if inputStr == 'q':
                 break
-            inputInt = int(inputStr)
-            if inputInt <= index and inputInt >= 1:
-                print COLOR_YELLOW, "run command:", COLOR_RED, sampleList[inputInt - 1], COLOR_WHITE
-                print "\n============================================================================="
-                os.system(sampleList[inputInt - 1])
-                print "\n============================================================================="
+            if inputStr.isdigit():
+                inputInt = int(inputStr)
+                if inputInt <= index and inputInt >= 1:
+                    print COLOR_YELLOW, "run command:", COLOR_RED, sampleList[inputInt - 1], COLOR_WHITE
+                    print "\n============================================================================="
+                    os.system(sampleList[inputInt - 1])
+                    print "\n============================================================================="
+                else:
+                    break
             else:
                 break
 
@@ -151,10 +154,13 @@ class commandHelp:
                 inputStr = raw_input("please input the index to show the command detail information:(q to quit)")
                 if inputStr == 'q':
                     break
-                inputInt = int(inputStr)
-                if inputInt <= index and inputInt >= 1:
-                    self.listPreciseSearch(commandList[inputInt-1])
-                    break
+                if inputStr.isdigit():
+                    inputInt = int(inputStr)
+                    if inputInt <= index and inputInt >= 1:
+                        self.listPreciseSearch(commandList[inputInt-1])
+                        break
+                    else:
+                        break
                 else:
                     break
 
