@@ -1,6 +1,7 @@
 # coding=utf-8
 import sys
 from constant import  *
+import platform
 from commandHelp import *
 
 # define the version number
@@ -119,9 +120,11 @@ def main(argv):
 
 if __name__=='__main__':
     print "\nwelcome to linux command helper, more at:( http://man.linuxde.net/)"
-    # get current path
-    path = os.getcwd()
-    print sys.argv[0]
+    # get current python exe path
+    path = sys.argv[0]
+    lastSplash = path.rindex('/')
+    path = path[0: lastSplash]
+
     ch = commandHelp(path+"/linux_command.csv", path+"/linux_command_detail.csv")
     if ch.importData() == -1:
         sys.exit(-1)
