@@ -55,7 +55,7 @@ ethtool,ethtool --change eth0 autoneg off speed 100 duplex full,手动设制网�
 iwconfig,iwconfig?eth1,显示无线网卡eth1的状态
 iwconfig,iwconfig eth1 rate 1Mb/s fixed,手动设制无线网卡速度
 iwlist,iwlist?scan,显示无线网络列表
-ip,ip?link show,显示interface列表
+ip,ip link show,显示interface列表
 ip,ip link set dev eth0 name wan,重命名eth0为wan
 ip,ip link set dev eth0 up,启动interface eth0(或关闭)
 ip,ip addr show,显示网卡的IP地址
