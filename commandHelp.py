@@ -98,8 +98,8 @@ class commandHelp:
                     index += 1
                     sampleList.append(line.getSample())
                     print COLOR_YELLOW, index, ":", COLOR_RED, line.getSample(), COLOR_YELLOW, line.getDescription(), "\t"
-            print COLOR_WHITE
         while(1):
+            print COLOR_WHITE
             inputStr = raw_input("please input the index to run the sample command:(q to quit)")
             if inputStr == 'q':
                 break
