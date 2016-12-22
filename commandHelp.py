@@ -157,7 +157,7 @@ class commandHelp:
                     break
                 else:
                     break
-                    
+
     def listHotCommand(self):
         print(COLOR_WHITE)
         if len(self.commandArray) >0 :
