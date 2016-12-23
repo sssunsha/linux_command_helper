@@ -239,19 +239,19 @@ class commandHelp:
 
     # add the new command to the command resource
     def addCommandArrayResource(self, commandName):
-        print COLOR_WHITE, "add Command to Command reource"
+        print COLOR_GREEN, "add Command to Command reource"
 
     # update the command to the command resource
     def updateCommandArrayResource(self, commandName):
-        print COLOR_WHITE, "update Command to Command resource"
+        print COLOR_GREEN, "update Command to Command resource"
 
     # add the command to the sample command resource
     def addSampleCommandArrayResource(self, commandName):
-        print  COLOR_WHITE, "add Command to Sample Resource"
+        print  COLOR_GREEN, "add Command to Sample Resource"
 
     # update the command to the sample command resource
     def updateSampleCommandArrayResource(self, commandName):
-        print COLOR_WHITE, "update Command to Sample Resource"
+        print COLOR_GREEN, "update Command to Sample Resource"
 
 
     def updateCommandResource(self):
