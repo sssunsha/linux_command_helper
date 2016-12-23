@@ -493,3 +493,4 @@ get_module,获取Linux内核模块的详细信息,内核与模块管理,,,
 depmod,分析可载入模块的相依性,内核与模块管理,,,
 insmod,将给定的模块加载到内核中,内核与模块管理,,,
 ls,显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件,文件和目录管理,ls,yes,http://man.linuxde.net/ls 
+mkdir,用来创建目录,, mkdir,yes,http://man.linuxde.net/mkdir
