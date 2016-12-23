@@ -49,3 +49,4 @@ def confirmChange4Command(n, d, g, k, h, u):
         return 0
     else:
         return -1
+

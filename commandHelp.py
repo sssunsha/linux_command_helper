@@ -89,7 +89,7 @@ class commandHelp:
                     print COLOR_YELLOW, index, " : ", COLOR_RED, line.getName(), COLOR_WHITE, " : ", line.getDescription()
             while(index):
                 print COLOR_WHITE
-                inputStr = raw_input("please input the index to choose the group:(q to quit)")
+                inputStr = raw_input("please input the index to choose the group:(q to quit) ")
                 if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
@@ -116,7 +116,7 @@ class commandHelp:
                     print COLOR_WHITE, index, " : ", COLOR_YELLOW, line.getGroup(), "\t"
             while(index):
                 print COLOR_WHITE
-                inputStr = raw_input("please input the index to choose the group:(q to quit)")
+                inputStr = raw_input("please input the index to choose the group:(q to quit) ")
                 if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
@@ -143,7 +143,7 @@ class commandHelp:
                     print COLOR_YELLOW, index, ":", COLOR_RED, line.getSample(), COLOR_YELLOW, line.getDescription(), "\t"
         while(index):
             print COLOR_WHITE
-            inputStr = raw_input("please input the index to run the sample command:(q to quit)")
+            inputStr = raw_input("please input the index to run the sample command:(q to quit) ")
             if checkQuit(inputStr):
                 break
             if inputStr.isdigit():
@@ -223,7 +223,7 @@ class commandHelp:
                     print COLOR_YELLOW, index, " : ", COLOR_RED, line.getName()
             while(index):
                 print COLOR_WHITE
-                inputStr = raw_input("please input the index to show the command information from hot list:(q to quit)")
+                inputStr = raw_input("please input the index to show the command information from hot list:(q to quit) ")
                 if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
@@ -263,7 +263,8 @@ class commandHelp:
 
             result = confirmChange4Command(name, des,group,keyword,hot,usage)
             if result == 1 :   # finlish the update
-                print "update Command the Command resource finished"
+                self.setCommandResourceData(line)
+                print COLOR_GREEN, "update Command the Command resource finished"
                 break
             elif result == 0:  #re-run the update the command
                 continue
@@ -281,7 +282,7 @@ class commandHelp:
 
     def updateCommandResource(self):
         print COLOR_WHITE
-        commandName = raw_input("please input the command Name to update the resource :(q to quit)")
+        commandName = raw_input("please input the command Name to update the resource :(q to quit) ")
         if checkQuit(commandName):
             return
         # check in commandArray the update command name is exist or not
@@ -305,3 +306,23 @@ class commandHelp:
             self.addSampleCommandArrayResource(commandName)
         else:
             self.updateSampleCommandArrayResource(commandName)
+
+    # set the update data to the command resource, and write to the resource
+    def setCommandResourceData(self, newline):
+        isMatch = 0
+        csvFile = open(self.commandFilePath, 'wb')
+        csvFile.write('\xEF\xBB\xBF')
+        writer = csv.writer(csvFile)
+        writer.writerow(COMMAND_RESOURCE_TITLE)
+
+        if len(self.commandArray) >0 :
+            for line in self.commandArray:
+                if line.getName() == newline.getName(): # find the match command name, so update the content
+                    isMatch = 1 # for updating, no need to write into command array again
+                writer.writerow([line.getName(), line.getDescription(), line.getGroup(), line.getKeyword(), line.getIsHot(), line.getUsage()])
+
+            if isMatch == 0: # need to add the new command
+                self.commandArray.append(newline)
+                writer.writerow(
+                    [newline.getName(), newline.getDescription(), newline.getGroup(), newline.getKeyword(), newline.getIsHot(),
+                     newline.getUsage()])
