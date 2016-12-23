@@ -8,7 +8,7 @@ class command:
     isHot = ""
     usage = ""
 
-    def __init__(self, n, d, g, k, h, u):
+    def __init__(self, n="", d="", g="", k="", h="", u=""):
         self.name = n
         self.description = d
         self.group = g

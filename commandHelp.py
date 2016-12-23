@@ -244,7 +244,27 @@ class commandHelp:
 
     # add the new command to the command resource
     def addCommandArrayResource(self, commandName):
-        print COLOR_GREEN, "add Command to Command reource"
+        print COLOR_GREEN, "add Command to Command resource"
+        name = des = group = keyword = hot = usage = ""
+        line = command()
+        print COLOR_WHITE
+        while  1:
+            name = line.setName(commandName)
+            des = line.setDescription(updateCommandDescriptionInput())
+            group = line.setGroup(updateCommandGroupInput())
+            keyword = line.setKeyword(updateCommandKeywordsInput())
+            hot = line.setIsHot(updateCommandHotInput())
+            usage = line.setUsage(updateCommandUsageInput())
+
+            result = confirmChange4Command(name, des,group,keyword,hot,usage)
+            if result == 1 :   # finlish the update
+                self.setCommandResourceData(line)
+                print COLOR_GREEN, "update Command the Command resource finished"
+                break
+            elif result == 0:  #re-run the update the command
+                continue
+            else: #cancel
+                break
 
     # update the command to the command resource
     def updateCommandArrayResource(self, commandName):
@@ -311,7 +331,7 @@ class commandHelp:
     def setCommandResourceData(self, newline):
         isMatch = 0
         csvFile = open(self.commandFilePath, 'wb')
-        csvFile.write('\xEF\xBB\xBF')
+        csvFile.write(UTF8_SETTING)
         writer = csv.writer(csvFile)
         writer.writerow(COMMAND_RESOURCE_TITLE)
 

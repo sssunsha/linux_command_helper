@@ -5,7 +5,7 @@ class sampleCommand:
     description = ""
     keyword = ""
 
-    def __init__(self, k, s, d):
+    def __init__(self, k="", s="", d=""):
         self.sample = s
         self.description = d
         self.keyword = k
