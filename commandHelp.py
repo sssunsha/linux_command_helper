@@ -206,11 +206,28 @@ class commandHelp:
                     break
 
     def listHotCommand(self):
-        print(COLOR_WHITE)
+        print(COLOR_YELLOW)
+        hots = []
+        index = 0
         if len(self.commandArray) >0 :
             for line in self.commandArray:
                 if line.getIsHot():
+                    index += 1
+                    hots.append(line.getName())
                     print line.getName()
+            while(index):
+                print COLOR_WHITE
+                inputStr = raw_input("please input the index to show the command information from hot list:(q to quit)")
+                if inputStr == 'q':
+                    break
+                if inputStr.isdigit():
+                    inputInt = int(inputStr)
+                    if inputInt <= index and inputInt >= 1:
+                        self.listPreciseSearch(hots[inputInt-1])
+                    else:
+                        break
+                else:
+                    break
 
     def listSampleCommand(self):
         print(COLOR_WHITE)
