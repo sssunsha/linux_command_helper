@@ -214,7 +214,7 @@ class commandHelp:
                 if line.getIsHot():
                     index += 1
                     hots.append(line.getName())
-                    print line.getName()
+                    print COLOR_YELLOW, index, " : ", COLOR_RED, line.getName()
             while(index):
                 print COLOR_WHITE
                 inputStr = raw_input("please input the index to show the command information from hot list:(q to quit)")
@@ -224,6 +224,7 @@ class commandHelp:
                     inputInt = int(inputStr)
                     if inputInt <= index and inputInt >= 1:
                         self.listPreciseSearch(hots[inputInt-1])
+                        break
                     else:
                         break
                 else:
