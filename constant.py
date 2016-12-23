@@ -7,3 +7,4 @@ COLOR_RED = '\033[1;31;40m'
 UTF8_SETTING = '\xEF\xBB\xBF'
 
 COMMAND_RESOURCE_TITLE = ['name', 'description', 'group', 'keywords', 'hot', 'usage']
+SAMPLE_COMMAND_RESOURCE_TITILE = ['keyword', 'sample', 'description']

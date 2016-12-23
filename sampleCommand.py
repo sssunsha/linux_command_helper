@@ -12,7 +12,7 @@ class sampleCommand:
 
     def getSample(self):
         return self.sample
-    def setName(self, s):
+    def setSample(self, s):
         self.sample = s
     def getDescription(self):
         return self.description

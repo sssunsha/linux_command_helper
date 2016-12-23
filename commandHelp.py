@@ -248,7 +248,7 @@ class commandHelp:
         result = raw_input("add Command to Command resource or not(q = quit)")
         if result == 'q':
             return
-        
+
         name = des = group = keyword = hot = usage = ""
         line = command()
         print COLOR_WHITE
@@ -360,3 +360,21 @@ class commandHelp:
                 writer.writerow(
                     [newline.getName(), newline.getDescription(), newline.getGroup(), newline.getKeyword(), newline.getIsHot(),
                      newline.getUsage()])
+
+    # set the update data to sample command resource, and write to the resource
+    def setSampleCommandResourceData(self, newline):
+        isMatch = 0
+        csvFile = open(self.sampleFilePath, 'wb')
+        csvFile.write(UTF8_SETTING)
+        writer = csv.writer(csvFile)
+        writer.writerow(SAMPLE_COMMAND_RESOURCE_TITILE)
+
+        if len(self.sampleCommandArray) >0 :
+            for line in self.sampleCommandArray:
+                if line.getSample() == newline.getSample(): # find the match sample command, so update the content
+                    isMatch = 1 # for updating, no need to write into command array again
+                writer.writerow([line.getKeyword(), line.getSample(), line.getDescription()])
+
+            if isMatch == 0: # need to add the new command
+                self.sampleCommandArray.append(newline)
+                writer.writerow([newline.getKeyword(), newline.getSample(), newline.getDescription()])
