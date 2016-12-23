@@ -1,4 +1,5 @@
 # coding=utf-8
+from constant import *
 
 def inputValidationCheck(index, inputInt):
     if inputInt <= index and inputInt >= 1:
@@ -32,13 +33,15 @@ def updateCommandUsageInput():
     return usageStr
 
 def confirmChange4Command(n, d, g, k, h, u):
+    print COLOR_GREEN
     print "Updated command:"
-    print "Name : ", n
-    print "Description : ", d
-    print "Group : ", g
-    print "keywords : ", k
-    print "Hot : ", h
-    print "Usage : ", u
+    print "Name : ", COLOR_YELLOW, n
+    print "Description : ", COLOR_YELLOW, d
+    print "Group : ", COLOR_YELLOW, g
+    print "keywords : ", COLOR_YELLOW, k
+    print "Hot : ", COLOR_YELLOW, h
+    print "Usage : ", COLOR_YELLOW, u
+    print COLOR_WHITE
     result = raw_input("confirm the change? y=yes, n=no, q=quit")
     if result == 'y':
         return 1
