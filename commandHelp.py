@@ -236,3 +236,6 @@ class commandHelp:
         if len(self.sampleCommandArray)>0:
             for line in self.sampleCommandArray:
                 print COLOR_WHITE, line.getKeyword(), " : ", COLOR_RED, line.getSample(), COLOR_YELLOW, " : ", line.getDescription()
+
+    def updateCommandResource(self):
+        print COLOR_WHITE

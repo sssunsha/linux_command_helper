@@ -24,7 +24,9 @@ def handleHelpList():
     print  "[keywords]: fuzzy search the [keywords] for command and description:\n"
     print "--search, -s [keywords]: precise search for the [keywords] with show all the information\n"
     print  "--hot, -o: list all the hot command \n"
+    print "--edit, -e: edit or update the resource for the command"
     print "------------------------------ help list -----------------------------------------------------------\n"
+
 
 # input command error function
 def handleErrorCommand():
@@ -82,6 +84,13 @@ def handleListSampleCommand():
     print  "---------------------------------------------------------------------------\n"
     _ch.listSampleCommand()
 
+def handleUpdateCommandResource():
+    print(COLOR_GREEN)
+    print  "---------------------------------------------------------------------------\n"
+    print " update linux commands: \n"
+    print  "---------------------------------------------------------------------------\n"
+    _ch.updateCommandResource()
+
 # parsing command function
 def parseCommand(commad):
     if commad[1].startswith('--'):
@@ -100,6 +109,8 @@ def parseCommand(commad):
             handlePreciseSearch(commad[2])
         elif option == "list":
             handleListSampleCommand()
+        elif option == "edit":
+            handleUpdateCommandResource()
         else:
             handleErrorCommand()
     elif commad[1].startswith('-'):
@@ -118,6 +129,8 @@ def parseCommand(commad):
             handlePreciseSearch(commad[2])
         elif option == "l":
             handleListSampleCommand()
+        elif option == "e":
+            handleUpdateCommandResource()
         else:
             handleErrorCommand()
     else:
