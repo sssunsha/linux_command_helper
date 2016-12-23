@@ -237,5 +237,46 @@ class commandHelp:
             for line in self.sampleCommandArray:
                 print COLOR_WHITE, line.getKeyword(), " : ", COLOR_RED, line.getSample(), COLOR_YELLOW, " : ", line.getDescription()
 
+    # add the new command to the command resource
+    def addCommandArrayResource(self, commandName):
+        print COLOR_WHITE, "add Command to Command reource"
+
+    # update the command to the command resource
+    def updateCommandArrayResource(self, commandName):
+        print COLOR_WHITE, "update Command to Command resource"
+
+    # add the command to the sample command resource
+    def addSampleCommandArrayResource(self, commandName):
+        print  COLOR_WHITE, "add Command to Sample Resource"
+
+    # update the command to the sample command resource
+    def updateSampleCommandArrayResource(self, commandName):
+        print COLOR_WHITE, "update Command to Sample Resource"
+
+
     def updateCommandResource(self):
         print COLOR_WHITE
+        commandName = raw_input("please input the index to show the command information from hot list:(q to quit)")
+        if checkQuit(commandName):
+            return
+        # check in commandArray the update command name is exist or not
+        isNewCommand = 1
+        for line in self.commandArray:
+            if line.getName() == commandName:
+                isNewCommand = 0
+                break
+        if isNewCommand:
+            self.addCommandArrayResource(commandName)
+        else:
+            self.updateCommandArrayResource(commandName)
+
+        # check in sampleCommandArray the update command name is exist or not
+        isNewSampleCommand = 1
+        for line in self.sampleCommandArray:
+            if line.getKeyword() == commandName:
+                isNewSampleCommand = 0
+                break
+        if isNewSampleCommand:
+            self.addSampleCommandArrayResource(commandName)
+        else:
+            self.updateSampleCommandArrayResource(commandName)
