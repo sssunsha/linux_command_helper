@@ -35,12 +35,12 @@ def updateCommandUsageInput():
 def confirmChange4Command(n, d, g, k, h, u):
     print COLOR_GREEN
     print "Updated command:"
-    print "Name : ", COLOR_YELLOW, n
-    print "Description : ", COLOR_YELLOW, d
-    print "Group : ", COLOR_YELLOW, g
-    print "keywords : ", COLOR_YELLOW, k
-    print "Hot : ", COLOR_YELLOW, h
-    print "Usage : ", COLOR_YELLOW, u
+    print COLOR_WHITE, "Name : ", COLOR_YELLOW, n
+    print COLOR_WHITE, "Description : ", COLOR_YELLOW, d
+    print COLOR_WHITE, "Group : ", COLOR_YELLOW, g
+    print COLOR_WHITE, "keywords : ", COLOR_YELLOW, k
+    print COLOR_WHITE, "Hot : ", COLOR_YELLOW, h
+    print COLOR_WHITE, "Usage : ", COLOR_YELLOW, u
     print COLOR_WHITE
     result = raw_input("confirm the change? y=yes, n=no, q=quit")
     if result == 'y':
