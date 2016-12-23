@@ -244,7 +244,11 @@ class commandHelp:
 
     # add the new command to the command resource
     def addCommandArrayResource(self, commandName):
-        print COLOR_GREEN, "add Command to Command resource"
+        print COLOR_GREEN
+        result = raw_input("add Command to Command resource or not(q = quit)")
+        if result == 'q':
+            return
+        
         name = des = group = keyword = hot = usage = ""
         line = command()
         print COLOR_WHITE
@@ -268,7 +272,11 @@ class commandHelp:
 
     # update the command to the command resource
     def updateCommandArrayResource(self, commandName):
-        print COLOR_GREEN, "update Command to Command resource"
+        print COLOR_GREEN
+        result = raw_input("update Command to Command resource or not(q = quit)")
+        if result == 'q':
+            return
+
         #first list the command information without sample usage
         line = self.listPreciseSearch(commandName, False)
         name = des = group = keyword = hot = usage = ""
@@ -293,11 +301,17 @@ class commandHelp:
 
     # add the command to the sample command resource
     def addSampleCommandArrayResource(self, commandName):
-        print  COLOR_GREEN, "add Command to Sample Resource"
+        print COLOR_GREEN
+        result = raw_input("add Command to Sample Resource or not(q = quit)")
+        if result == 'q':
+            return
 
     # update the command to the sample command resource
     def updateSampleCommandArrayResource(self, commandName):
-        print COLOR_GREEN, "update Command to Sample Resource"
+        print COLOR_GREEN
+        result = raw_input("update Command to Sample Resource or not(q = quit)")
+        if result == 'q':
+            return
 
 
     def updateCommandResource(self):
