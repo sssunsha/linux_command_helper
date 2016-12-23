@@ -17,19 +17,19 @@ def updateCommandNameInput():
     commandStr = raw_input("(return to skip) Name: ")
     return commandStr
 def updateCommandDescriptionInput():
-    desStr = raw_input("(return to skip) Description:")
+    desStr = raw_input("(return to skip) Description: ")
     return desStr
 def updateCommandGroupInput():
-    groupStr = raw_input("(return to skip) Group:")
+    groupStr = raw_input("(return to skip) Group: ")
     return groupStr
 def updateCommandKeywordsInput():
-    keyStr = raw_input("(return to skip) Keywords:")
+    keyStr = raw_input("(return to skip) Keywords: ")
     return keyStr
 def updateCommandHotInput():
-    isHotStr = raw_input("(return to skip) isHot:")
+    isHotStr = raw_input("(return to skip) isHot: ")
     return isHotStr
 def updateCommandUsageInput():
-    usageStr = raw_input("(return to skip) Usage:")
+    usageStr = raw_input("(return to skip) Usage: ")
     return usageStr
 
 def confirmChange4Command(n, d, g, k, h, u):
@@ -42,7 +42,7 @@ def confirmChange4Command(n, d, g, k, h, u):
     print COLOR_WHITE, "Hot : ", COLOR_YELLOW, h
     print COLOR_WHITE, "Usage : ", COLOR_YELLOW, u
     print COLOR_WHITE
-    result = raw_input("confirm the change? y=yes, n=no, q=quit")
+    result = raw_input("confirm the change? y=yes, n=no, q=quit:  ")
     if result == 'y':
         return 1
     elif result == 'n':
