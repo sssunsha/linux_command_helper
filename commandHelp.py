@@ -161,12 +161,14 @@ class commandHelp:
 
 
 #precise search for the keyword in the commandArray
-    def listPreciseSearch(self, k):
+    def listPreciseSearch(self, k, isListSamples = True):
         print(COLOR_WHITE)
+        commandData = ""
         # print the basic information for the command k
         if len(self.commandArray) >0 :
             for line in self.commandArray:
                 if k == line.getName():
+                    commandData = line
                     print COLOR_WHITE, "Name : ", COLOR_YELLOW, line.getName(), "\t"
                     print COLOR_WHITE, "Description : ", COLOR_YELLOW, line.getDescription(), "\t"
                     print  COLOR_WHITE, "Group : ", COLOR_YELLOW, line.getGroup(), "\t"
@@ -174,8 +176,11 @@ class commandHelp:
                     print  COLOR_WHITE, "Hot : ", COLOR_YELLOW, line.getIsHot(), "\t"
                     print COLOR_WHITE, "Usage : ", COLOR_YELLOW, line.getUsage(), "\t\n"
                     break
-        # handle for the sample command search
-        self.listSampleSearch(k)
+        if isListSamples:
+            # handle for the sample command search
+            self.listSampleSearch(k)
+        else:
+            return commandData
 
 # fuzzy search the keyword in the commandArray
     def listFuzzySearch(self, k):
@@ -244,6 +249,26 @@ class commandHelp:
     # update the command to the command resource
     def updateCommandArrayResource(self, commandName):
         print COLOR_GREEN, "update Command to Command resource"
+        #first list the command information without sample usage
+        line = self.listPreciseSearch(commandName, False)
+        name = des = group = keyword = hot = usage = ""
+        print COLOR_WHITE
+        while  1:
+            name = line.setName("") # no need to update the command name
+            des = line.setDescription(updateCommandDescriptionInput())
+            group = line.setGroup(updateCommandGroupInput())
+            keyword = line.setKeyword(updateCommandKeywordsInput())
+            hot = line.setIsHot(updateCommandHotInput())
+            usage = line.setUsage(updateCommandUsageInput())
+
+            result = confirmChange4Command(name, des,group,keyword,hot,usage)
+            if result == 1 :   # finlish the update
+                print "update Command the Command resource finished"
+                break
+            elif result == 0:  #re-run the update the command
+                continue
+            else: #cancel
+                break
 
     # add the command to the sample command resource
     def addSampleCommandArrayResource(self, commandName):
@@ -256,7 +281,7 @@ class commandHelp:
 
     def updateCommandResource(self):
         print COLOR_WHITE
-        commandName = raw_input("please input the index to show the command information from hot list:(q to quit)")
+        commandName = raw_input("please input the command Name to update the resource :(q to quit)")
         if checkQuit(commandName):
             return
         # check in commandArray the update command name is exist or not

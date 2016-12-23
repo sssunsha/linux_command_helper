@@ -5,7 +5,7 @@ class command:
     description = ""
     group = ""
     keyword = ""
-    isHot = 0
+    isHot = ""
     usage = ""
 
     def __init__(self, n, d, g, k, h, u):
@@ -17,25 +17,48 @@ class command:
         self.usage = u
     def getName(self):
         return self.name
+
     def setName(self, n):
-        self.name = n
+        if n != "":
+            self.name = n
+        return self.getName()
+
     def getDescription(self):
         return self.description
+
     def setDescription(self, d):
-        self.description = d
+        if d != "":
+            self.description = d
+        return self.getDescription()
+
     def getGroup(self):
         return self.group
+
     def setGroup(self, g):
-        self.group = g
+        if g != "":
+            self.group = g
+        return self.getGroup()
+
     def getKeyword(self):
         return self.keyword
+
     def setKeyword(self, k):
-        self.keyword = k
+        if k != "":
+            self.keyword = k
+        return self.getKeyword()
+
     def getIsHot(self):
         return self.isHot
+
     def setIsHot(self, h):
-        self.isHot = h
+        if h != "":
+            self.isHot = h
+        return self.getIsHot()
+
     def getUsage(self):
         return self.usage
+
     def setUsage(self, u):
-        self.usage = u
+        if u != "":
+            self.usage = u
+        return self.getUsage()
