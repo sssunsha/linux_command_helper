@@ -4,6 +4,7 @@ import os
 from command import *
 from sampleCommand import *
 from constant import *
+from util import *
 
 
 class commandHelp:
@@ -76,25 +77,25 @@ class commandHelp:
             for line in self.commandArray:
                 print line.getName(), " : ", line.getDescription(), "\t"
 
-    def listGroips(self, group):
+    def listGroups(self, group):
         print COLOR_WHITE
-        command = []
+        commandList = []
         index = 0
         if len(self.commandArray)>0 :
             for line in self.commandArray:
                 if line.getGroup() == group:
                     index += 1
-                    command.append(line.getName())
+                    commandList.append(line.getName())
                     print COLOR_YELLOW, index, " : ", COLOR_RED, line.getName(), COLOR_WHITE, " : ", line.getDescription()
             while(index):
                 print COLOR_WHITE
                 inputStr = raw_input("please input the index to choose the group:(q to quit)")
-                if inputStr == 'q':
+                if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
                     inputInt = int(inputStr)
-                    if inputInt <= index and inputInt >= 1:
-                        self.listPreciseSearch(command[inputInt-1])
+                    if inputValidationCheck(index, inputInt):
+                        self.listPreciseSearch(commandList[inputInt-1])
                         break
                     else:
                         break
@@ -116,12 +117,12 @@ class commandHelp:
             while(index):
                 print COLOR_WHITE
                 inputStr = raw_input("please input the index to choose the group:(q to quit)")
-                if inputStr == 'q':
+                if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
                     inputInt = int(inputStr)
-                    if inputInt <= index and inputInt >= 1:
-                        self.listGroips(groups[inputInt-1])
+                    if inputValidationCheck(index, inputInt):
+                        self.listGroups(groups[inputInt-1])
                         break
                     else:
                         break
@@ -143,11 +144,11 @@ class commandHelp:
         while(index):
             print COLOR_WHITE
             inputStr = raw_input("please input the index to run the sample command:(q to quit)")
-            if inputStr == 'q':
+            if checkQuit(inputStr):
                 break
             if inputStr.isdigit():
                 inputInt = int(inputStr)
-                if inputInt <= index and inputInt >= 1:
+                if inputValidationCheck(index, inputInt):
                     print COLOR_YELLOW, "run command:", COLOR_RED, sampleList[inputInt - 1], COLOR_WHITE
                     print "\n============================================================================="
                     os.system(sampleList[inputInt - 1])
@@ -193,11 +194,11 @@ class commandHelp:
             while (index):
                 print COLOR_WHITE
                 inputStr = raw_input("please input the index to show the command detail information:(q to quit)")
-                if inputStr == 'q':
+                if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
                     inputInt = int(inputStr)
-                    if inputInt <= index and inputInt >= 1:
+                    if inputValidationCheck(index, inputInt):
                         self.listPreciseSearch(commandList[inputInt-1])
                         break
                     else:
@@ -218,11 +219,11 @@ class commandHelp:
             while(index):
                 print COLOR_WHITE
                 inputStr = raw_input("please input the index to show the command information from hot list:(q to quit)")
-                if inputStr == 'q':
+                if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
                     inputInt = int(inputStr)
-                    if inputInt <= index and inputInt >= 1:
+                    if inputValidationCheck(index, inputInt):
                         self.listPreciseSearch(hots[inputInt-1])
                         break
                     else:
