@@ -12,13 +12,24 @@ class sampleCommand:
 
     def getSample(self):
         return self.sample
+
     def setSample(self, s):
-        self.sample = s
+        if s != "":
+            self.sample = s
+        return self.getSample()
+
     def getDescription(self):
         return self.description
+
     def setDescription(self, d):
-        self.description = d
+        if d != "":
+            self.description = d
+        return self.getDescription()
+
     def getKeyword(self):
         return self.keyword
+
     def setKeyword(self, k):
-        self.keyword = k
+        if k != "":
+            self.keyword = k
+        return self.getKeyword()

@@ -32,6 +32,14 @@ def updateCommandUsageInput():
     usageStr = raw_input("(return to skip) Usage: ")
     return usageStr
 
+def updateSampleSampleInput():
+    sampleStr = raw_input("(return to skip) Sample: ")
+    return sampleStr
+
+def updateSampleDescriptionInput():
+    desStr = raw_input("(return to skip) description: ")
+    return desStr
+
 def confirmChange4Command(n, d, g, k, h, u):
     print COLOR_GREEN
     print "Updated command:"
@@ -50,3 +58,17 @@ def confirmChange4Command(n, d, g, k, h, u):
     else:
         return -1
 
+def confirmChange4SampleCommand(k, s, d):
+    print COLOR_GREEN
+    print "Updated Sample command:"
+    print COLOR_WHITE, "Keyword : ", COLOR_YELLOW, k
+    print COLOR_WHITE, "Sample : ", COLOR_YELLOW, s
+    print COLOR_WHITE, "Description : ", COLOR_YELLOW, d
+    print COLOR_WHITE
+    result = raw_input("confirm the sample change? y=yes, n=no, q=quit:  ")
+    if result == 'y':
+        return 1
+    elif result == 'n':
+        return 0
+    else:
+        return -1

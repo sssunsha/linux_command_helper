@@ -131,7 +131,7 @@ class commandHelp:
 
 # list the sample command for the search k
 # and handle for quick using
-    def listSampleSearch(self, k):
+    def listSampleSearch(self, k, isShowQuickExec = True):
         # print the sample command usage for the command k
         if len(self.sampleCommandArray) > 0:
             index = 0
@@ -141,7 +141,7 @@ class commandHelp:
                     index += 1
                     sampleList.append(line.getSample())
                     print COLOR_YELLOW, index, ":", COLOR_RED, line.getSample(), COLOR_YELLOW, line.getDescription(), "\t"
-        while(index):
+        while(index and isShowQuickExec):
             print COLOR_WHITE
             inputStr = raw_input("please input the index to run the sample command:(q to quit) ")
             if checkQuit(inputStr):
@@ -245,7 +245,7 @@ class commandHelp:
     # add the new command to the command resource
     def addCommandArrayResource(self, commandName):
         print COLOR_GREEN
-        result = raw_input("add Command to Command resource or not(q = quit)")
+        result = raw_input("add Command to Command resource or not(q = quit, any key to continue)")
         if result == 'q':
             return
 
@@ -263,7 +263,7 @@ class commandHelp:
             result = confirmChange4Command(name, des,group,keyword,hot,usage)
             if result == 1 :   # finlish the update
                 self.setCommandResourceData(line)
-                print COLOR_GREEN, "update Command the Command resource finished"
+                print COLOR_GREEN, "add Command to Command resource finished"
                 break
             elif result == 0:  #re-run the update the command
                 continue
@@ -273,7 +273,7 @@ class commandHelp:
     # update the command to the command resource
     def updateCommandArrayResource(self, commandName):
         print COLOR_GREEN
-        result = raw_input("update Command to Command resource or not(q = quit)")
+        result = raw_input("update Command to Command resource or not(q = quit, any key to continue)")
         if result == 'q':
             return
 
@@ -292,7 +292,7 @@ class commandHelp:
             result = confirmChange4Command(name, des,group,keyword,hot,usage)
             if result == 1 :   # finlish the update
                 self.setCommandResourceData(line)
-                print COLOR_GREEN, "update Command the Command resource finished"
+                print COLOR_GREEN, "update Command to Command resource finished"
                 break
             elif result == 0:  #re-run the update the command
                 continue
@@ -301,22 +301,40 @@ class commandHelp:
 
     # add the command to the sample command resource
     def addSampleCommandArrayResource(self, commandName):
-        print COLOR_GREEN
-        result = raw_input("add Command to Sample Resource or not(q = quit)")
-        if result == 'q':
-            return
+        # first show the sample command for the commandName
+        self.listSampleSearch(commandName, False)
 
-    # update the command to the sample command resource
-    def updateSampleCommandArrayResource(self, commandName):
         print COLOR_GREEN
-        result = raw_input("update Command to Sample Resource or not(q = quit)")
+        result = raw_input("add Command to Sample Resource or not(q = quit), any key to continue")
         if result == 'q':
             return
+        else:
+            # start to input the new sample command
+            sample = description = key = ""
+            sampleLine = sampleCommand()
+            print COLOR_WHITE
+            while 1:
+                key = sampleLine.setKeyword(commandName)
+                sample = sampleLine.setSample(updateSampleSampleInput())
+                description = sampleLine.setDescription(updateSampleDescriptionInput())
+
+                result = confirmChange4SampleCommand(key, sample, description)
+                if result == 1:  # finish the update
+                    self.setSampleCommandResourceData(sampleLine)
+                    print COLOR_GREEN, "add Sample Command to Sample Command resource finished"
+                    break
+                elif result == 0:  # re-run the update the command
+                    continue
+                else:  # cancel
+                    break
+
+
+
 
 
     def updateCommandResource(self):
         print COLOR_WHITE
-        commandName = raw_input("please input the command Name to update the resource :(q to quit) ")
+        commandName = raw_input("please input the command Name to update the resource :(q to quit)")
         if checkQuit(commandName):
             return
         # check in commandArray the update command name is exist or not
@@ -330,16 +348,8 @@ class commandHelp:
         else:
             self.updateCommandArrayResource(commandName)
 
-        # check in sampleCommandArray the update command name is exist or not
-        isNewSampleCommand = 1
-        for line in self.sampleCommandArray:
-            if line.getKeyword() == commandName:
-                isNewSampleCommand = 0
-                break
-        if isNewSampleCommand:
-            self.addSampleCommandArrayResource(commandName)
-        else:
-            self.updateSampleCommandArrayResource(commandName)
+        # add new sample to the sample resource
+        self.addSampleCommandArrayResource(commandName)
 
     # set the update data to the command resource, and write to the resource
     def setCommandResourceData(self, newline):
