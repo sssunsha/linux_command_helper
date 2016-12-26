@@ -189,3 +189,5 @@ echo,"echo ""this is a text line oen"" > test.txt",写入文件前清空文件�
 echo,"echo ""this is a text line one"" >> test.txt",在文件后面追加一行
 cat,cat linuxde.net 2> out.txt,粗�将错误信息保持到out.txt中
 cat,cat linuxde.next 2> /dev/null,将错误保持到空设备文件中，即丢失该信息，放到垃圾箱中不要
+cat,cat m1 m2,同时显示m1和�m2的内容，m1 m2为文件
+cat,cat m1 m2 > file,将文件m1 m2的呢内容合并到file中
