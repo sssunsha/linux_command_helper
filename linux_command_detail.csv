@@ -212,3 +212,7 @@ xargs,"echo ""nameXnameXnameXname"" | xargs -dX",自定义定界符符 (name nam
 uniq,uniq file ,删除重复行
 uniq,sort file | uniq -c,统计��各行属�出现的次数
 uniq,sort file | uniq -d,找出文件中重复的行
+grep,grep KEYWORD file1 file2,在多个文件中查询关键字
+grep,"grep -v ""KEYWORD"" file",在文件查询处关键字之外的行
+grep,"grep -E ""[1-9]+"" file",通过正则表达式查询
+grep,"grep -c ""KEYWORD"" file",统计关键字出现行�数
