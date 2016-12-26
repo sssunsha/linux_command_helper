@@ -307,7 +307,7 @@ class commandHelp:
         print COLOR_GREEN
         result = raw_input("add Command to Sample Resource or not(q = quit, any key to continue):  ")
         if result == 'q':
-            return
+            return -1
         else:
             # start to input the new sample command
             sample = description = key = ""
@@ -322,11 +322,11 @@ class commandHelp:
                 if result == 1:  # finish the update
                     self.setSampleCommandResourceData(sampleLine)
                     print COLOR_GREEN, "add Sample Command to Sample Command resource finished"
-                    break
+                    return 1
                 elif result == 0:  # re-run the update the command
                     continue
                 else:  # cancel
-                    break
+                    return -1
 
 
     def updateCommandResource(self, c):
@@ -350,7 +350,9 @@ class commandHelp:
             self.updateCommandArrayResource(commandName)
 
         # add new sample to the sample resource
-        self.addSampleCommandArrayResource(commandName)
+        addSampleResult = 1
+        while addSampleResult:
+            addSampleResult = self.addSampleCommandArrayResource(commandName)
 
     # set the update data to the command resource, and write to the resource
     def setCommandResourceData(self, newline):
@@ -384,8 +386,10 @@ class commandHelp:
             for line in self.sampleCommandArray:
                 if line.getSample() == newline.getSample(): # find the match sample command, so update the content
                     isMatch = 1 # for updating, no need to write into command array again
-                    writer.writerow([newline.getKeyword(), newline.getSample(), newline.getDescription()])
-                    continue
+                    # update sampleCommandArray
+                    line.setSample(newline.getSample())
+                    line.setDescription(newline.getDescription())
+                    line.setKeyword(newline.getKeyword())
                 writer.writerow([line.getKeyword(), line.getSample(), line.getDescription()])
 
             if isMatch == 0: # need to add the new command
