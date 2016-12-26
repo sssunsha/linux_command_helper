@@ -219,3 +219,6 @@ grep,"grep -c ""KEYWORD"" file",统计关键字出现行�数
 cut,cut -f 1 test.txt,提取文件的第一个字段
 cut,"cut -f 2,3 file","提取文件的第2�,3个字段"
 cut,"cut -d"";"" file",以；为分隔符提取
+w,w -f,显示用户从哪里登录
+w,w -s,短格式输出
+watch,watch -n 2 free,以2秒为间隔检测内存变化
