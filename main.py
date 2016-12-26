@@ -84,12 +84,12 @@ def handleListSampleCommand():
     print  "---------------------------------------------------------------------------\n"
     _ch.listSampleCommand()
 
-def handleUpdateCommandResource():
+def handleUpdateCommandResource(c):
     print(COLOR_GREEN)
     print  "---------------------------------------------------------------------------\n"
     print " update linux commands: \n"
     print  "---------------------------------------------------------------------------\n"
-    _ch.updateCommandResource()
+    _ch.updateCommandResource(c)
 
 # parsing command function
 def parseCommand(commad):
@@ -110,7 +110,11 @@ def parseCommand(commad):
         elif option == "list":
             handleListSampleCommand()
         elif option == "edit":
-            handleUpdateCommandResource()
+            if len(sys.argv) >=3:
+                cmd = command[2]
+            else:
+                cmd = ""
+            handleUpdateCommandResource(cmd)
         else:
             handleErrorCommand()
     elif commad[1].startswith('-'):
@@ -130,7 +134,11 @@ def parseCommand(commad):
         elif option == "l":
             handleListSampleCommand()
         elif option == "e":
-            handleUpdateCommandResource()
+            if len(sys.argv) >=3:
+                cmd = command[2]
+            else:
+                cmd = ""
+            handleUpdateCommandResource(cmd)
         else:
             handleErrorCommand()
     else:

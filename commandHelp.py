@@ -329,14 +329,15 @@ class commandHelp:
                     break
 
 
+    def updateCommandResource(self, c):
+        if c == "":
+            print COLOR_WHITE
+            commandName = raw_input("please input the command Name to update the resource :(q to quit):  ")
+            if checkQuit(commandName):
+                return
+        else:
+            commandName = c
 
-
-
-    def updateCommandResource(self):
-        print COLOR_WHITE
-        commandName = raw_input("please input the command Name to update the resource :(q to quit):  ")
-        if checkQuit(commandName):
-            return
         # check in commandArray the update command name is exist or not
         isNewCommand = 1
         for line in self.commandArray:
