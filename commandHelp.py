@@ -307,7 +307,7 @@ class commandHelp:
         print COLOR_GREEN
         result = raw_input("add Command to Sample Resource or not(q = quit, any key to continue):  ")
         if result == 'q':
-            return -1
+            return 0
         else:
             # start to input the new sample command
             sample = description = key = ""
@@ -326,7 +326,7 @@ class commandHelp:
                 elif result == 0:  # re-run the update the command
                     continue
                 else:  # cancel
-                    return -1
+                    return 0
 
 
     def updateCommandResource(self, c):
