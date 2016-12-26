@@ -89,7 +89,7 @@ class commandHelp:
                     print COLOR_YELLOW, index, " : ", COLOR_RED, line.getName(), COLOR_WHITE, " : ", line.getDescription()
             while(index):
                 print COLOR_WHITE
-                inputStr = raw_input("please input the index to choose the group:(q to quit) ")
+                inputStr = raw_input("please input the index to choose the group:(q to quit):  ")
                 if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
@@ -116,7 +116,7 @@ class commandHelp:
                     print COLOR_WHITE, index, " : ", COLOR_YELLOW, line.getGroup(), "\t"
             while(index):
                 print COLOR_WHITE
-                inputStr = raw_input("please input the index to choose the group:(q to quit) ")
+                inputStr = raw_input("please input the index to choose the group:(q to quit):  ")
                 if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
@@ -143,7 +143,7 @@ class commandHelp:
                     print COLOR_YELLOW, index, ":", COLOR_RED, line.getSample(), COLOR_YELLOW, line.getDescription(), "\t"
         while(index and isShowQuickExec):
             print COLOR_WHITE
-            inputStr = raw_input("please input the index to run the sample command:(q to quit) ")
+            inputStr = raw_input("please input the index to run the sample command:(q to quit):  ")
             if checkQuit(inputStr):
                 break
             if inputStr.isdigit():
@@ -198,7 +198,7 @@ class commandHelp:
                     print COLOR_YELLOW, index, ":", COLOR_WHITE, line.getName(), " : ", COLOR_YELLOW, line.getDescription(), "\t"
             while (index):
                 print COLOR_WHITE
-                inputStr = raw_input("please input the index to show the command detail information:(q to quit)")
+                inputStr = raw_input("please input the index to show the command detail information:(q to quit):  ")
                 if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
@@ -223,7 +223,7 @@ class commandHelp:
                     print COLOR_YELLOW, index, " : ", COLOR_RED, line.getName()
             while(index):
                 print COLOR_WHITE
-                inputStr = raw_input("please input the index to show the command information from hot list:(q to quit) ")
+                inputStr = raw_input("please input the index to show the command information from hot list:(q to quit):  ")
                 if checkQuit(inputStr):
                     break
                 if inputStr.isdigit():
@@ -273,7 +273,7 @@ class commandHelp:
     # update the command to the command resource
     def updateCommandArrayResource(self, commandName):
         print COLOR_GREEN
-        result = raw_input("update Command to Command resource or not(q = quit, any key to continue)")
+        result = raw_input("update Command to Command resource or not(q = quit, any key to continue):  ")
         if result == 'q':
             return
 
@@ -305,7 +305,7 @@ class commandHelp:
         self.listSampleSearch(commandName, False)
 
         print COLOR_GREEN
-        result = raw_input("add Command to Sample Resource or not(q = quit), any key to continue")
+        result = raw_input("add Command to Sample Resource or not(q = quit, any key to continue):  ")
         if result == 'q':
             return
         else:
@@ -334,7 +334,7 @@ class commandHelp:
 
     def updateCommandResource(self):
         print COLOR_WHITE
-        commandName = raw_input("please input the command Name to update the resource :(q to quit)")
+        commandName = raw_input("please input the command Name to update the resource :(q to quit):  ")
         if checkQuit(commandName):
             return
         # check in commandArray the update command name is exist or not
