@@ -94,7 +94,7 @@ def handleUpdateCommandResource(c):
 # parsing command function
 def parseCommand(command):
     if command[1].startswith('--'):
-        option = commad[1][2:]
+        option = command[1][2:]
         if option == 'version':
             handleVerstionList()
         elif option == 'help':
