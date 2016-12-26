@@ -216,3 +216,6 @@ grep,grep KEYWORD file1 file2,在多个文件中查询关键字
 grep,"grep -v ""KEYWORD"" file",在文件查询处关键字之外的行
 grep,"grep -E ""[1-9]+"" file",通过正则表达式查询
 grep,"grep -c ""KEYWORD"" file",统计关键字出现行�数
+cut,cut -f 1 test.txt,提取文件的第一个字段
+cut,"cut -f 2,3 file","提取文件的第2�,3个字段"
+cut,"cut -d"";"" file",以；为分隔符提取
