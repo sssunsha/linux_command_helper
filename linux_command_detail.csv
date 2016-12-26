@@ -185,3 +185,7 @@ set,set | grep $USER,在当前环境中查找
 touch,touch -c -t 0304050607 file,改变文件的时间标签 (YYMMDDhhmm)
 python,python -m SimpleHTTPServer,Serve current directory tree at http://$HOSTNAME:8000/
 ,,
+echo,"echo ""this is a text line oen"" > test.txt",写入文件前清空文件内容
+echo,"echo ""this is a text line one"" >> test.txt",在文件后面追加一行
+cat,cat linuxde.net 2> out.txt,粗�将错误信息保持到out.txt中
+cat,cat linuxde.next 2> /dev/null,将错误保持到空设备文件中，即丢失该信息，放到垃圾箱中不要
