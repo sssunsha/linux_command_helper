@@ -207,5 +207,5 @@ find,find . -type f -user tom,找出当前目录用户tom拥有的所有文件
 find,find . -type f -group sunk,找出当前目录用户组sunk拥有的所有文件
 find,find . -empty,列出所有长度为零的文件
 xargs,cat test.txt | xargs,多行输入单行输出
-xargs,cat test.txt | xargs -n3,�3�每行显示3个
+xargs,cat test.txt | xargs -n3,每行显示3个
 xargs,"echo ""nameXnameXnameXname"" | xargs -dX",自定义定界符符 (name name name name)
