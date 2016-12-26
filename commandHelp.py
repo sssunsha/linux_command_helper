@@ -383,7 +383,7 @@ class commandHelp:
             for line in self.sampleCommandArray:
                 if line.getSample() == newline.getSample(): # find the match sample command, so update the content
                     isMatch = 1 # for updating, no need to write into command array again
-                writer.writerow([line.getKeyword(), line.getSample(), line.getDescription()])
+                writer.writerow([newline.getKeyword(), newline.getSample(), newline.getDescription()])
 
             if isMatch == 0: # need to add the new command
                 self.sampleCommandArray.append(newline)
