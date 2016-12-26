@@ -92,8 +92,8 @@ def handleUpdateCommandResource(c):
     _ch.updateCommandResource(c)
 
 # parsing command function
-def parseCommand(commad):
-    if commad[1].startswith('--'):
+def parseCommand(command):
+    if command[1].startswith('--'):
         option = commad[1][2:]
         if option == 'version':
             handleVerstionList()
@@ -106,7 +106,7 @@ def parseCommand(commad):
         elif option == "hot":
             handleHotCommand()
         elif option == "search":
-            handlePreciseSearch(commad[2])
+            handlePreciseSearch(command[2])
         elif option == "list":
             handleListSampleCommand()
         elif option == "edit":
@@ -117,8 +117,8 @@ def parseCommand(commad):
             handleUpdateCommandResource(cmd)
         else:
             handleErrorCommand()
-    elif commad[1].startswith('-'):
-        option = commad[1][1:]
+    elif command[1].startswith('-'):
+        option = command[1][1:]
         if option == 'v':
             handleVerstionList()
         elif option == 'h':
@@ -130,7 +130,7 @@ def parseCommand(commad):
         elif option == "o":
             handleHotCommand()
         elif option == "s":
-            handlePreciseSearch(commad[2])
+            handlePreciseSearch(command[2])
         elif option == "l":
             handleListSampleCommand()
         elif option == "e":
@@ -143,7 +143,7 @@ def parseCommand(commad):
             handleErrorCommand()
     else:
         # do the search
-        handleFuzzySearch(commad[1])
+        handleFuzzySearch(command[1])
 
 
 def main(argv):
