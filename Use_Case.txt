@@ -1,4 +1,0 @@
-1. help list
-2. version information
-3. list all the commands
-4. list commands in group
