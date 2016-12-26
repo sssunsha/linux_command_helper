@@ -209,3 +209,6 @@ find,find . -empty,列出所有长度为零的文件
 xargs,cat test.txt | xargs,多行输入单行输出
 xargs,cat test.txt | xargs -n3,每行显示3个
 xargs,"echo ""nameXnameXnameXname"" | xargs -dX",自定义定界符符 (name name name name)
+uniq,uniq file ,删除重复行
+uniq,sort file | uniq -c,统计��各行属�出现的次数
+uniq,sort file | uniq -d,找出文件中重复的行
