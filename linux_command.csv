@@ -18,20 +18,20 @@ killall,使用进程的名称来杀死一组进程 (使用此指令可以杀死�
 runlevel,打印当前Linux系统的运行等级,进程和作业管理,,,
 batch,在系统不繁忙的时候执行定时任务 (用于在指定时间，当系统不繁忙时执行任务，用法与at相似),进程和作业管理,,,
 ps,报告当前系统的进程状态,进程和作业管理,,yes,
-at,在指定时间执行一个任务,进程和作业管理,,,
+at,在指定时间执行一个任务,进程和作业管理,,,http://man.linuxde.net/at
 crontab,提交和管理用户的需要周期性执行的任务,进程和作业管理,,,
 pkill,可以按照进程名杀死进程,进程和作业管理,,yes,http://man.linuxde.net/pkill
-atrm,删除待执行任务队列中的指定任务,进程和作业管理,,,
-atq,列出当前用户的at任务列表,进程和作业管理,,,
-openssl,强大的安全套接字层密码库 （有两种运行模式：交互模式和批处理模式。 提供了8种对称加密和4种非对称加密方法）,系统安全,,,
-lastlog,显示系统中所有用户最近一次登录信息,系统安全,,,
-last,列出目前与过去登入系统的用户相关信息,系统安全,,,
+atrm,删除待执行任务队列中的指定任务,进程和作业管理,,,http://man.linuxde.net/atrm
+atq,列出当前用户的at任务列表,进程和作业管理,,,http://man.linuxde.net/atq
+openssl,强大的安全套接字层密码库 （有两种运行模式：交互模式和批处理模式。 提供了8种对称加密和4种非对称加密方法）,系统安全,,,http://man.linuxde.net/openssl
+lastlog,显示系统中所有用户最近一次登录信息,系统安全,,,http://man.linuxde.net/lastlog
+last,列出目前与过去登入系统的用户相关信息,系统安全,,yes,http://man.linuxde.net/last
 logwatch,可定制和可插入式的日志监视系统,系统安全,,,
 logrotate,统日志进行轮转、压缩和删除,系统安全,,,
 lastb,列出登入系统失败的用户相关信息,系统安全,,,
 chroot,把根目录换成指定的目的目录,系统安全,,,
-sudo,以其他身份来执行命令,系统安全,,yes,
-logsave,将命令的输出信息保存到指定的日志文件,系统安全,,,
+sudo,以其他身份来执行命令,系统安全,,yes,http://man.linuxde.net/sudo
+logsave,将命令的输出信息保存到指定的日志文件,系统安全,,,http://man.linuxde.net/logsave
 chage,修改帐号和密码的有效期限,用户和工作组管理,,,
 pwconv,用来开启用户的投影密码,用户和工作组管理,,,
 grpck,用于验证组文件的完整性,用户和工作组管理,,,
@@ -494,3 +494,4 @@ depmod,分析可载入模块的相依性,内核与模块管理,,,
 insmod,将给定的模块加载到内核中,内核与模块管理,,,
 ls,显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件,文件和目录管理,ls,yes,http://man.linuxde.net/ls 
 mkdir,用来创建目录,, mkdir,yes,http://man.linuxde.net/mkdir
+ipcm,,,,,http://man.linuxde.net/ipcrm

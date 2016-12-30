@@ -240,3 +240,5 @@ ps,"watch -n 1 ‘ps -aux --sort -pmem, -pcpu",以秒为单位实时监控进程
 ps,"watch -n 1 ‘ps -aux --sort -pmem, -pcpu | head 20�",通过head来只显示前20名进程的信息
 ps,watch -n 1 ‘ps -aux -U p sunsha u --sort -pmem -pcpu | head 20,只查看用用户名为sunsha的前20进程信息
 pkill,pkill process,根据进程名来杀死进程
+lastlog,lastlog,显示所有用户最�近�一次登录信息
+last,last -10,显示最近10次登录的用户和相关信息
