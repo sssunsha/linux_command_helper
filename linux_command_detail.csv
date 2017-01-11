@@ -251,3 +251,15 @@ lsblk,lsblk -a,列出所有块设备，包括空设备的信息
 lsblk,lsblk -S,列出SCSI设备信息
 df,df -a,查看全部文件系统
 fdisk,fdisk /dev/sda1,以问答形式显示操作分和查看分区的菜单
+iotop,sudo iotop,显示各个进程对磁盘i/o操作的信息，通过快捷键操作� a:显示累积使用量， r：切换排序方式 p:进程/线程切�显示方式切换 o:只显示有i/o输出的进程
+tload,tload -d 1,以1秒为间隔来显示系统负责情况
+mpstat,mpstat,显示所有CPU自系统启动开始的平均值数据
+mpstat,mpstat -I CPU,显示每个CPU的数据
+mpstat,mpstat 2,每两秒钟显示�一次结果
+top,top,以互动模式查询和操作系统进程，具体快捷键请查阅usage
+ifstat,ifstat,显示�网络接口活动状态的工具，具体参数看usage
+dstat,dstat,非常全能个系统监控工具，几乎可以监控所有信息，具体看usage
+fuser,fuser /etc/password,显示文件路径对应的进程号
+vmstat,vmstat,显示虚拟内存的信息
+vmstat,vmstat 2,以两秒间隔显示虚拟内存信息
+uptime,uptime,显示系统运行时间，用户数和平均负载等信息

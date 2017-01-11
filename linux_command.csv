@@ -381,22 +381,22 @@ diff3,比较3个文件不同的地方,文件查找和比较,,,
 whereis,查找二进制程序、代码等相关文件路径,文件查找和比较,,,
 locate/slocate,查找文件或目录,文件查找和比较,,,
 nethogs,终端下的网络流量监控工具 （是一个开源的命令行工具（类似于Linux的top命令），用来按进程或程序实时统计网络带宽使用率。）,性能监测与优化,,,
-iotop,用来监视磁盘I/O使用状况的工具,性能监测与优化,,,
-tload,显示系统负载状况,性能监测与优化,,,
-mpstat,显示各个可用CPU的状态,性能监测与优化,,,
-top,显示或管理执行中的程序,性能监测与优化,,,
-ifstat,统计网络接口流量状态,性能监测与优化,,,
+iotop,用来监视磁盘I/O使用状况的工具,性能监测与优化,,yes,http://man.linuxde.net/iotop
+tload,显示系统负载状况,性能监测与优化,,,http://man.linuxde.net/tload
+mpstat,显示各个可用CPU的状态,性能监测与优化,,,http://man.linuxde.net/mpstat
+top,显示或管理执行中的程序,\,,yes,http://man.linuxde.net/top
+ifstat,统计网络接口流量状态,性能监测与优化,,yes,http://man.linuxde.net/ifstat
 strace,跟踪系统调用和信号(是一个集诊断、调试、统计与一体的工具，我们可以使用strace对应用的系统调用和信号传递的跟踪结果来对应用进行分析，以达到解决问题或者是了解应用工作过程的目的。通过本工具可以分析程序运行的调用情况和耗时等所有情况),性能监测与优化,,,
 time,统计给定命令所花费的总时间,性能监测与优化,,,
-iostat,监视系统输入输出设备和CPU的使用情况,性能监测与优化,,,
-dstat,通用的系统资源统计工具 （是一个用来替换vmstat、iostat、netstat、nfsstat和ifstat这些命令的工具，是一个全能系统信息统计工具。）,性能监测与优化,,,
-fuser,使用文件或文件结构识别进程,性能监测与优化,,,
-vmstat,显示虚拟内存状态,性能监测与优化,,,
+iostat,监视系统输入输出设备和CPU的使用情况,性能监测与优化,,,http://man.linuxde.net/iostat
+dstat,通用的系统资源统计工具 （是一个用来替换vmstat、iostat、netstat、nfsstat和ifstat这些命令的工具，是一个全能系统信息统计工具。）,性能监测与优化,,yes,http://man.linuxde.net/dstat
+fuser,使用文件或文件结构识别进程,性能监测与优化,,,http://man.linuxde.net/fuser
+vmstat,显示虚拟内存状态,性能监测与优化,,,http://man.linuxde.net/vmstat
 free,显示内存的使用情况,性能监测与优化,,,
 ltrace,用来跟踪进程调用库函数的情况 (用来跟踪进程调用库函数的情况),性能监测与优化,,,
 lsof,显示Linux系统当前已打开的所有文件列表 （很有用）,性能监测与优化,,,
 sar,系统运行状态统计工具,性能监测与优化,,,
-uptime,查看Linux系统负载信息,性能监测与优化,,,
+uptime,查看Linux系统负载信息,性能监测与优化,,yes,http://man.linuxde.net/uptime
 trap,指定在接收到信号后将要采取的动作， 常见用途是在脚本程序被中断时完成清理工作,shell内建命令,,,
 apropos,在 whatis 数据库中查找字符串 (作用类似于man -k),shell内建命令,,,
 fc,修改历史命令并执行,shell内建命令,,,
