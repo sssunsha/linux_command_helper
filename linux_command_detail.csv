@@ -263,3 +263,5 @@ fuser,fuser /etc/password,显示文件路径对应的进程号
 vmstat,vmstat,显示虚拟内存的信息
 vmstat,vmstat 2,以两秒间隔显示虚拟内存信息
 uptime,uptime,显示系统运行时间，用户数和平均负载等信息
+cmp,cmp 1.txt 2.txt,比较�两个文件，并且生成�差异的报告
+locate,locate -i ~/m,忽略大小写的情况下查询主目录下m开头的文件

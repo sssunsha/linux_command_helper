@@ -373,10 +373,10 @@ rcp,使在两台Linux主机之间的文件复制操作更简单(remote cp),文�
 tftp,在本机和tftp服务器之间使用TFTP协议传输文件,文件传输,,,
 scp,加密的方式在本地主机和远程主机之间复制文件,文件传输,,,
 ncftp,是增强的的FTP工具,文件查找和比较,,,
-diff,比较给定的两个文件的不同,文件查找和比较,,,
+diff,比较给定的两个文件的不同,文件查找和比较,,yes,http://man.linuxde.net/diff
 which,查找并显示给定命令的绝对路径,文件查找和比较,,,
 find,在指定目录下查找文件,文件查找和比较,,,http://man.linuxde.net/find
-cmp,比较两个文件是否有差异,文件查找和比较,,,
+cmp,比较两个文件是否有差异,文件查找和比较,,yes,http://man.linuxde.net/cmp
 diff3,比较3个文件不同的地方,文件查找和比较,,,
 whereis,查找二进制程序、代码等相关文件路径,文件查找和比较,,,
 locate/slocate,查找文件或目录,文件查找和比较,,,
@@ -495,3 +495,4 @@ insmod,将给定的模块加载到内核中,内核与模块管理,,,
 ls,显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件,文件和目录管理,ls,yes,http://man.linuxde.net/ls 
 mkdir,用来创建目录,, mkdir,yes,http://man.linuxde.net/mkdir
 ipcm,,,,,http://man.linuxde.net/ipcrm
+locate,,,,yes,http://man.linuxde.net/locate_slocate
