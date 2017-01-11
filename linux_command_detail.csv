@@ -242,3 +242,12 @@ ps,watch -n 1 ‘ps -aux -U p sunsha u --sort -pmem -pcpu | head 20,只查看用
 pkill,pkill process,根据进程名来杀死进程
 lastlog,lastlog,显示所有用户最�近�一次登录信息
 last,last -10,显示最近10次登录的用户和相关信息
+blkid,sudo blkid,列出系统中所有挂载的块设备文件系统的类型
+du,du -s xxx,显示xxx文件或者xxx目录下占用空间的�总和
+du,du xxx,显示xxx目录下所有文件和自目录占用空间的列表
+du,du,� 显示系统所有文件和目录占用空间的�列表
+lsblk,lsblk,列出所有块设备信息
+lsblk,lsblk -a,列出所有块设备，包括空设备的信息
+lsblk,lsblk -S,列出SCSI设备信息
+df,df -a,查看全部文件系统
+fdisk,fdisk /dev/sda1,以问答形式显示操作分和查看分区的菜单
