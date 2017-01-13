@@ -371,8 +371,8 @@ dump,用于备份ext2或者ext3文件系统,文件备份和恢复,,,
 ftp,用来设置文件系统相关功能（用命令的方式来控制在本地机和远程机之间传送文件）,文件传输,,,
 rcp,使在两台Linux主机之间的文件复制操作更简单(remote cp),文件传输,,,
 tftp,在本机和tftp服务器之间使用TFTP协议传输文件,文件传输,,,
-scp,加密的方式在本地主机和远程主机之间复制文件,文件传输,,,
-ncftp,是增强的的FTP工具,文件查找和比较,,,
+scp,加密的方式在本地主机和远程主机之间复制文件,文件传输,,yes,http://man.linuxde.net/scp
+ncftp,是增强的的FTP工具,文件查找和比较,,,http://man.linuxde.net/ncftp
 diff,比较给定的两个文件的不同,文件查找和比较,,yes,http://man.linuxde.net/diff
 which,查找并显示给定命令的绝对路径,文件查找和比较,,,
 find,在指定目录下查找文件,文件查找和比较,,,http://man.linuxde.net/find
