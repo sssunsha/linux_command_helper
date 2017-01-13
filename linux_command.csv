@@ -496,3 +496,4 @@ ls,显示目标列表，在Linux中是使用率较高的命令。ls命令的输�
 mkdir,用来创建目录,, mkdir,yes,http://man.linuxde.net/mkdir
 ipcm,,,,,http://man.linuxde.net/ipcrm
 locate,,,,yes,http://man.linuxde.net/locate_slocate
+hd,显以16进制显示文件内容,,,y,
