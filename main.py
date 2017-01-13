@@ -113,7 +113,9 @@ def parseCommand(command):
             if len(sys.argv) >=3:
                 cmd = command[2]
             else:
-                cmd = ""
+                print COLOR_RED
+                print "please input the command name for edit mode!"
+                return;
             handleUpdateCommandResource(cmd)
         else:
             handleErrorCommand()
@@ -137,7 +139,9 @@ def parseCommand(command):
             if len(sys.argv) >=3:
                 cmd = command[2]
             else:
-                cmd = ""
+                print COLOR_RED
+                print "please input the command name for edit mode!"
+                return;
             handleUpdateCommandResource(cmd)
         else:
             handleErrorCommand()
