@@ -497,3 +497,4 @@ mkdir,用来创建目录,, mkdir,yes,http://man.linuxde.net/mkdir
 ipcm,,,,,http://man.linuxde.net/ipcrm
 locate,,,,yes,http://man.linuxde.net/locate_slocate
 hd,显以16进制显示文件内容,,,y,
+git,git,,,yes,

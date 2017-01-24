@@ -293,3 +293,4 @@ info,info command,显示command的帮助文档，区别于man的另外一种形�
 md5sum,md5sum file,生成文件的md5校验值
 md5sum,md5sum file -c file.md5,验证file文件的md5值是否与file.md5文件中的校验值一致
 whatis,whatis command,简略版本的man，显示命令的�简略介绍
+git,git submodule update --init --recursive,初始化并且更新所有的submodule
