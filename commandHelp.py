@@ -230,9 +230,6 @@ class commandHelp:
                     inputInt = int(inputStr)
                     if inputValidationCheck(index, inputInt):
                         self.listPreciseSearch(hots[inputInt-1])
-                        break
-                    else:
-                        break
                 else:
                     break
 
