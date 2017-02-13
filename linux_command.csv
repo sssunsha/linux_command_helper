@@ -304,16 +304,16 @@ tree,树状图列出目录的内容,目录基本操作,,,
 pwd,绝对路径方式显示用户当前工作目录,目录基本操作,,,
 popd,用于删除目录栈中的记录,目录基本操作,,,
 pushd,将目录加入命令堆叠中,目录基本操作,,,
-dos2unix,将DOS格式文本文件转换成Unix格式(。DOS下的文本文件是以\r\n作为断行标志的，表示成十六进制就是0D 0A。而Unix下的文本文件是以\n作为断行标志的，表示成十六进制就是0A。),文件权限属性设置,,,
-chmod,用来变更文件或目录的权限,文件权限属性设置,,,
-stat,用于显示文件的状态信息    (能够得到比ls丰富的多的文件信息),文件权限属性设置,,,
+dos2unix,将DOS格式文本文件转换成Unix格式(。DOS下的文本文件是以\r\n作为断行标志的，表示成十六进制就是0D 0A。而Unix下的文本文件是以\n作为断行标志的，表示成十六进制就是0A。),文件权限属性设置,,,http://man.linuxde.net/dos2unix
+chmod,用来变更文件或目录的权限,文件权限属性设置,,yes,http://man.linuxde.net/chmod
+stat,用于显示文件的状态信息    (能够得到比ls丰富的多的文件信息),文件权限属性设置,,yes,http://man.linuxde.net/stat
 setfacl,设置文件访问控制列表 （在命令行里设置ACL（访问控制列表）。在命令行里，一系列的命令跟随以一系列的文件名。）,文件权限属性设置,,,
-chown,用来变更文件或目录的拥有者或所属群组,文件权限属性设置,,,
-file,用来探测给定文件的类型。（MIME）,文件权限属性设置,,,
+chown,用来变更文件或目录的拥有者或所属群组,文件权限属性设置,,yes,http://man.linuxde.net/chown
+file,用来探测给定文件的类型。（MIME）,文件权限属性设置,,yes,http://man.linuxde.net/file
 umask,用来设置限制新建文件权限的掩码,文件权限属性设置,,,
-chgrp,用来变更文件或目录的所属群组,文件权限属性设置,,,
+chgrp,用来变更文件或目录的所属群组,文件权限属性设置,,yes,http://man.linuxde.net/chgrp
 lsattr,查看文件的第二扩展文件系统属性,文件权限属性设置,,,
-chattr,用来改变文件属性,文件权限属性设置,,,
+chattr,用来改变文件的第二属性,文件权限属性设置,,yes,http://man.linuxde.net/chattr
 egrep,在文件内查找指定的字符串（与grep -e 类似）,文件过滤分割与合并,,yes,http://man.linuxde.net/egrep
 comm,两个文件之间的比较,文件过滤分割与合并,,,http://man.linuxde.net/comm
 pr,将文本文件转换成适合打印的格式(将文本文件转换成适合打印的格式，它可以把较大的文件分割成多个页面进行打印，并为每个页面添加标题),文件过滤分割与合并,,,http://man.linuxde.net/pr

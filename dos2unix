@@ -1,0 +1,14 @@
+sort,sort -u file1 file2,两个未排序文件的并集
+sort,sort file1 file2 | uniq -d,两个未排序文件的交集
+sort,sort file1 file1 file2 | uniq -u,两个未排序文件的差 集
+sort,sort file1 file2 | uniq -u,两个未排序文件的对称差集
+join,join -t'\0' -a1 -a2 file1 file2,两个有序文件的并集
+join,join -t'\0' file1 file2,两个有序文件的交集
+join,join -t'\0' -v2 file1 file2,两个有序文件的差集
+join,join -t'\0' -v1 -v2 file1 file2,两个有序文件的对称差集
+grep,grep KEYWORD file1 file2,在多个文件中查询关键字
+comm,comm file1 file2,显示两文件�的不同，第一列显示file1特有的，第二列显示file2特有的，第三列显示梁两文件都有的
+paste,paste file1 file2,将文件file1和file2按列合并
+dos2unix,dos2unix file1,想windows下的文件修改成unix格式的编码文件。在unix下打开dos编辑的文件往往会在结尾处显示^M字符，通过修改可以调整去除
+dos2unix,dos2unix -k file1,在不�修改时间戳的情况下转换成unix格式
+file,file file1,显示file1的文件类型，编码格式��以及其他属性

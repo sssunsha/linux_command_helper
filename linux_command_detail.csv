@@ -294,3 +294,13 @@ md5sum,md5sum file,生成文件的md5校验值
 md5sum,md5sum file -c file.md5,验证file文件的md5值是否与file.md5文件中的校验值一致
 whatis,whatis command,简略版本的man，显示命令的�简略介绍
 git,git submodule update --init --recursive,初始化并且更新所有的submodule
+dos2unix,dos2unix file1,想windows下的文件修改成unix格式的编码文件。在unix下打开dos编辑的文件往往会在结尾处显示^M字符，通过修改可以调整去除
+dos2unix,dos2unix -k file1,在不�修改时间戳的情况下转换成unix格式
+dos2unix,dos2unix -n oldfile newfile,想dos下编辑的文件dosfile修改成unix下支持的newfile，但�原来的文件不改变
+stat,stat file,显示file的详细信息
+stat,stat -f file,显示文件系统状态而不是文件状态
+chown,chown -R sunsha /usr/meng,将/usr/meng下的所有文件owner改成sunsha
+file,file file1,显示file1的文件类型，编码格式��以及其他属性
+chattr,chattr +i file,防止文件file被xiug
+chattr,chattr +a file,只允许文件file追加内容，不允许删除，适用于log等文件类型
+chattr,chattr +c file,将文件file压缩存储
